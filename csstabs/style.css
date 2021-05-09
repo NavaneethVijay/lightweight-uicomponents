@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+body {
+  height: 100vh;
+  max-width: 740px;
+  overflow: hidden;
+  margin: 20px auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #bbd4ce;
+}
+
+.tabsite-tab {
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .tabsite-tab {
+    margin: 0 20px;
+  }
+}
+
+.tabsite-tab input[name='tabs'] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.tabsite-tab .tabsite-tab__content {
+  padding: 0 10px 20px 10px;
+  display: none;
+}
+
+.tabsite-tab .tabsite-tab__content .tabsite-content {
+  padding: 26px 30px;
+}
+
+.tabsite-tab input[name='tabs']#tab-1
+~ .tabsite-tab__tabs
+label:nth-child(1)::after {
+  background: #293241;
+  border-radius: 5px 5px 0 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 15px;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.tabsite-tab input[name='tabs']#tab-1
+~ .tabsite-tab__tabs
+label:nth-child(1):hover::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-2
+~ .tabsite-tab__tabs
+label:nth-child(2)::after {
+  background: #293241;
+  border-radius: 5px 5px 0 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 15px;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.tabsite-tab input[name='tabs']#tab-2
+~ .tabsite-tab__tabs
+label:nth-child(2):hover::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-3
+~ .tabsite-tab__tabs
+label:nth-child(3)::after {
+  background: #293241;
+  border-radius: 5px 5px 0 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 15px;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.tabsite-tab input[name='tabs']#tab-3
+~ .tabsite-tab__tabs
+label:nth-child(3):hover::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-4
+~ .tabsite-tab__tabs
+label:nth-child(4)::after {
+  background: #293241;
+  border-radius: 5px 5px 0 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 15px;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.tabsite-tab input[name='tabs']#tab-4
+~ .tabsite-tab__tabs
+label:nth-child(4):hover::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-1:checked
+~ .tabsite-tab__contents
+.tabsite-tab__content:nth-of-type(1) {
+  display: block;
+}
+
+.tabsite-tab input[name='tabs']#tab-1:checked
+~ .tabsite-tab__tabs
+label:nth-child(1) {
+  color: #272727;
+  position: relative;
+}
+
+.tabsite-tab input[name='tabs']#tab-1:checked
+~ .tabsite-tab__tabs
+label:nth-child(1)::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-2:checked
+~ .tabsite-tab__contents
+.tabsite-tab__content:nth-of-type(2) {
+  display: block;
+}
+
+.tabsite-tab input[name='tabs']#tab-2:checked
+~ .tabsite-tab__tabs
+label:nth-child(2) {
+  color: #272727;
+  position: relative;
+}
+
+.tabsite-tab input[name='tabs']#tab-2:checked
+~ .tabsite-tab__tabs
+label:nth-child(2)::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-3:checked
+~ .tabsite-tab__contents
+.tabsite-tab__content:nth-of-type(3) {
+  display: block;
+}
+
+.tabsite-tab input[name='tabs']#tab-3:checked
+~ .tabsite-tab__tabs
+label:nth-child(3) {
+  color: #272727;
+  position: relative;
+}
+
+.tabsite-tab input[name='tabs']#tab-3:checked
+~ .tabsite-tab__tabs
+label:nth-child(3)::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab input[name='tabs']#tab-4:checked
+~ .tabsite-tab__contents
+.tabsite-tab__content:nth-of-type(4) {
+  display: block;
+}
+
+.tabsite-tab input[name='tabs']#tab-4:checked
+~ .tabsite-tab__tabs
+label:nth-child(4) {
+  color: #272727;
+  position: relative;
+}
+
+.tabsite-tab input[name='tabs']#tab-4:checked
+~ .tabsite-tab__tabs
+label:nth-child(4)::after {
+  width: calc(100% - 30px);
+}
+
+.tabsite-tab .tabsite-tab__content {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: tabsite-tab__content-fade;
+          animation-name: tabsite-tab__content-fade;
+  display: none;
+}
+
+@-webkit-keyframes tabsite-tab__content-fade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes tabsite-tab__content-fade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.tabsite-tab__tabs {
+  margin: 0 26px;
+  overflow: auto;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tabsite-tab__tabs::after {
+  background: #dadada;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 18px;
+  position: absolute;
+  width: calc(100% - 36px);
+}
+
+.tabsite-tab__tabs label {
+  padding: 24px 18px 14px 18px;
+  line-height: 22px;
+  color: #6e6d6d;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-weight: 600;
+  padding: 45px 18px 18px 18px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=style.css.map */

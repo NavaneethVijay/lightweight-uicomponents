@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+body {
+  height: 100vh;
+  max-width: 740px;
+  overflow: hidden;
+  margin: 20px auto;
+  display: grid;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #bbd4ce;
+}
+$tabs: 1, 2, 3, 4;
+
+.tabsite-tab {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  overflow: hidden;
+  z-index: 1;
+  @media(max-width: 767px){
+    margin: 0 20px;
+  }
+  input[name='tabs'] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .tabsite-tab__content {
+    padding: 0 10px 20px 10px;
+    display: none;
+    .tabsite-content {
+      padding: 26px 30px;
+    }
+  }
+  @each $tab in $tabs {
+    input[name='tabs']#tab-#{$tab}
+      ~ .tabsite-tab__tabs
+      label:nth-child(#{$tab}) {
+      &::after {
+        background: #293241;
+        border-radius: 5px 5px 0 0;
+        bottom: 0;
+        content: '';
+        height: 3px;
+        left: 15px;
+        position: absolute;
+        width: 0;
+        z-index: 1;
+        transition: width 0.3s ease;
+      }
+      &:hover {
+        &::after {
+          width: calc(100% - 30px);
+        }
+      }
+    }
+  }
+  @each $tab in $tabs {
+    input[name='tabs']#tab-#{$tab}:checked
+      ~ .tabsite-tab__contents
+      .tabsite-tab__content:nth-of-type(#{$tab}) {
+      display: block;
+    }
+    input[name='tabs']#tab-#{$tab}:checked
+      ~ .tabsite-tab__tabs
+      label:nth-child(#{$tab}) {
+      color: #272727;
+      position: relative;
+      &::after {
+        width: calc(100% - 30px);
+      }
+    }
+  }
+}
+
+.tabsite-tab .tabsite-tab__content {
+  animation-duration: 0.5s;
+  animation-name: tabsite-tab__content-fade;
+  display: none;
+}
+@keyframes tabsite-tab__content-fade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.tabsite-tab__tabs {
+  margin: 0 26px;
+  overflow: auto;
+  width: auto;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: none;
+  white-space: nowrap;
+  position: relative;
+  &::after {
+    background: #dadada;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 18px;
+    position: absolute;
+    width: calc(100% - 36px);
+  }
+  label {
+    padding: 24px 18px 14px 18px;
+
+    line-height: 22px;
+    color: #6e6d6d;
+    cursor: pointer;
+    flex: 1 1 auto;
+    font-weight: 600;
+    padding: 45px 18px 18px 18px;
+    position: relative;
+    text-align: center;
+    transition: color 0.2s linear;
+    user-select: none;
+  }
+}
